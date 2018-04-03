@@ -1,12 +1,9 @@
 # Google Spreadhsheet Api - Values Batch Update
 
-A [Supercode](http://gosupercode.com) function that update values multiple request in one call google spreadsheet.
-Still developing for other methods of google spreadsheet api.
+A [Supercode](http://gosupercode.com) function that applies one or more updates to the spreadsheet.
 
 ## Server Usage
-
-[Supercode](http://gosupercode.com) SDK will be available after the launch.
-
+#Get the Supercode Python SDK: https://git.io/vxTjp
 ```
 import supercode
 import pprint
@@ -44,22 +41,18 @@ example:
     }'
     
     payload='{
-        "valueInputOption": "USER_ENTERED",
-        "data": [
+        requests: [
             {
-                "majorDimension": "ROWS",
-                "range": "Sheet1!A1:A1",
-                "values": [["Hello"]]
-            },
-            {
-                "majorDimension": "ROWS",
-                "range": "Sheet1!A2:A2",
-                "values": [["World"]]
+                "insertDimension": {
+                    "range": {
+                        "sheetId": 5125512, #the sheet ID
+                        "dimension": "COLUMNS",
+                        "startIndex": 2,
+                        "endIndex": 3
+                    }
+                }
             }
         ]
     }'
     
     python test.py --credentials_json_data=$json_data --spreadsheet_id="<your spreadsheet id>" --payload=$payload
-
-
-**Note:** Supercode has not been launched yet. This is for internal testing only.
