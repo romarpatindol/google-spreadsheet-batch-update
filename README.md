@@ -1,4 +1,4 @@
-# Google Spreadhsheet Api - Values Batch Update
+# Google Spreadhsheet Api - Batch Update
 
 A [Supercode](http://gosupercode.com) function that applies one or more updates to the spreadsheet.
 
